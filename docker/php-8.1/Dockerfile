@@ -25,6 +25,9 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath xml zip
 # Copy the Laravel project to the working directory
 # COPY . /var/www/html
 
+# Set working directory
+WORKDIR /usr/share/nginx/html
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -33,10 +36,9 @@ RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
-# Set working directory
-WORKDIR /usr/share/nginx/html
-
 USER $user
+
+CMD ['composer install']
 
 # Expose port 9000 for PHP-FPM
 EXPOSE 9000
