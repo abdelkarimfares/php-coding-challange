@@ -10,6 +10,8 @@ and "coding-challenge-frontend" is single page application created by vuejs 3 an
 - Laravel v10
 - Mysql v5.7
 - PHP v8.1
+- Vuejs 3
+- Typescript v4.8.4
 - Docker v20.10.21
 ## Backend Architecture
 The project is based on the service repository pattern, which separates the business logic from the data access layer. The service layer interacts with the repository layer to retrieve or store data, and returns the result to the controller. This pattern allows for better separation of concerns and easier unit testing.
