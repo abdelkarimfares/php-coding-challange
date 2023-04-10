@@ -44,15 +44,19 @@ The project uses Laravel Passport for OAuth 2 authentication. This provides a se
    ````
    docker exec -it laravel bash
    ````
-   Then run
+   Then run the migration
    ````
    php artisan migrate
+   ````
+   Then run database seed
+6. ````
+   php artisan db:seed
    ````
    And Then run the passport installation
    ````
    php artisan passport:install --uuids
    ````
-6. Finally, you are done navigate to http://localhost:8080 via the browser.
+7. Finally, you are done navigate to http://localhost:8080 via the browser.
 And the backend will be run on http://localhost:8000
 
 
